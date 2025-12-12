@@ -1,0 +1,12 @@
+@import "../../../../variables";
+
+.card-footer{
+    background-color: $primary-color;
+    color: $font-primary-color;
+}
+
+.view-location{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}

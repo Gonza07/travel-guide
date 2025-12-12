@@ -1,0 +1,30 @@
+@import "../../../../variables";
+.tag {
+  height: 40px;
+  width: 20%;
+  font-weight: bold;
+  margin-top: 50px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center; 
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.tagPrimary{
+    background-color: $alert-green-color; 
+    color: $font-secondary-color;
+}
+
+.tagSecondary{
+
+}
+
+.tagDefault{
+
+}

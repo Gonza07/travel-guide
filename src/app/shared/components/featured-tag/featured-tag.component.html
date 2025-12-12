@@ -1,0 +1,13 @@
+<ng-container *ngIf="tagText">
+  <div
+    class="tag"
+    [ngClass]="{
+      tagPrimary: type === TagTypes.primary,
+      tagSecondary: type === TagTypes.secondary,
+      tagDefault: type === TagTypes.default
+    }"
+  >
+    <p>{{ tagText.toUpperCase() }}</p>
+    <span class="material-symbols-outlined"> {{ icon }} </span>
+  </div>
+</ng-container>

@@ -1,0 +1,28 @@
+<div class="col-lg-12 d-flex justify-content-center">
+<div class="col-lg-6">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Country</th>
+          <th scope="col">Capital</th>
+          <th scope="col">Region</th>
+          <th scope="col">Flag</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let country of data;  index as i">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{country.name.common}}</td>
+          <td>{{country.capital}}</td>
+          <td>{{country.region}}</td>
+          <td><img class="country-flag" [src]="country.flags.svg" /> </td>
+        </tr>
+      </tbody>
+      <footer>
+       <button class="btn btn-primary mt-2">Click</button>
+      </footer>
+    </table>
+
+    </div>
+  </div>

@@ -1,0 +1,21 @@
+.sizing{
+    //height: 90%;
+    width: 100%;
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 15px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  
+  background: rgba(0, 0, 0, 0.45); 
+  
+  color: white;
+  font-size: 16px;
+  max-width: 70%;
+}

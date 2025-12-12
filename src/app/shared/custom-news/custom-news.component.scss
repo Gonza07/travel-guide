@@ -1,0 +1,24 @@
+@import "../../../variables";
+
+.news-section{
+    margin-top: $spacing-vertical;
+    margin-bottom: 100px;
+}
+
+.news-description{
+    background-color: $secondary-color;
+    color: $font-primary-color;
+    padding: 50px;
+    height: 500px;
+
+    h1 {
+        font-weight: bolder;
+        font-size: 60px;
+    }
+}
+
+
+.btn{
+    background-color: $smooth-accent-color;
+    color: $font-secondary-color;
+}
