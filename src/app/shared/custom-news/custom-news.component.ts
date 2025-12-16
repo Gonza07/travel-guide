@@ -12,7 +12,9 @@ import { TagTypes } from '../../shared/enums/tag-type.enum'
 })
 export class CustomNewsComponent implements OnChanges {
   @Input() inPromotion: Array<CountryCarouselImage> = [];
-  public promotionTagText: string = "promotion trip"
+  @Input() title: string = ''
+  @Input() description: string = ''
+  @Input() tagText: string = 'Featured trip'
   TagTypes = TagTypes;
 
   ngOnChanges(changes: SimpleChanges): void {
