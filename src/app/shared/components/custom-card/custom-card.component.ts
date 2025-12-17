@@ -1,4 +1,11 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { CountryCarouselImage } from '../../interfaces/country-images';
 import { getRandomInt } from '../../functions/random-number';
 import { CommonModule } from '@angular/common';
@@ -15,6 +22,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class CustomCardComponent implements OnChanges {
   @Input() cardImages: Array<CountryCarouselImage> = [];
+  @Output() locate = new EventEmitter<{ lat: number; lng: number }>();
   public imagesLength: number = 0;
   public selectedIndex?: number = 0;
   public selectedIndexes: number[] = [];
@@ -55,11 +63,12 @@ export class CustomCardComponent implements OnChanges {
     this.spinner.show();
     this.homeService.getImageLocation(photoId).subscribe({
       next: (data: any) => {
-        const lat = data.location.position.latitude;
-        const lng = data.location.position.longitude;
+        const imageLat = data.location.position.latitude;
+        const imageLng = data.location.position.longitude;
 
-        const googleMapsUrl = `https://www.google.com/maps?q=${lat},${lng}`;
-        this.goToMaps(googleMapsUrl)
+        if (imageLat && imageLng) {
+          this.locate.emit({ lat: imageLat, lng: imageLng });
+        }
       },
       error: (err) => {
         this.spinner.hide();
@@ -72,6 +81,6 @@ export class CustomCardComponent implements OnChanges {
   }
 
   public goToMaps(url: string): void {
-     window.open(url, '_blank', 'noopener,noreferrer');
+    window.open(url, '_blank', 'noopener,noreferrer');
   }
 }

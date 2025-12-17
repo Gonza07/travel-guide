@@ -48,6 +48,7 @@ export class HomeComponent implements OnInit {
   public inPromotionTours: Array<CountryCarouselImage> = [];
   public recomendationTitle = "Need some recomendation? Check this maigcal tour !"
   public recomendationDescription = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem voluptatum iusto labore. Mollitia, quasi accusamus! Itaque rerum delectus quod dolorem fugit inventore sint libero, ut quo esse, et cupiditate."
+  public selectedLocation?: { lat: number; lng: number };
   constructor(
     private homeServices: HomeService,
     private spinner: NgxSpinnerService
@@ -109,4 +110,8 @@ export class HomeComponent implements OnInit {
       },
     });
   }
+
+  onLocate(location: { lat: number; lng: number }) {
+  this.selectedLocation = location;
+}
 }
