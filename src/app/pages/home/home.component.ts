@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { fadeAnimation } from './animations/home.animations';
 import { CustomNewsComponent } from '../../shared/custom-news/custom-news.component';
 import { CustomTableComponent } from '../../shared/components/custom-table/custom-table.component';
+import { MapComponent } from '../../shared/components/map/map.component';
 
 @Component({
   selector: 'app-home',
@@ -33,6 +34,7 @@ import { CustomTableComponent } from '../../shared/components/custom-table/custo
     MatIconModule,
     FormsModule,
     CustomNewsComponent,
+    MapComponent
   ],
   animations: [fadeAnimation],
   templateUrl: './home.component.html',

@@ -25,6 +25,10 @@
   <div *ngIf="viewMode === 'card'" @fadeAnimation>
     <app-custom-table [data]="countries"></app-custom-table>
   </div>
+
+  <div class="col-lg-12 sections-margin">
+    <app-map></app-map>
+  </div>
 </div>
 <div class="col-lg-12 sections-margin">
   <app-custom-news
