@@ -13,7 +13,7 @@ export class HomeService {
 
   public getAllCountries(params = null): Observable<Array<CountryData>> {
     return this.http.get<Array<CountryData>>(
-      'https://restcountries.com/v3.1/all?fields=name,cca3,flags,region,subregion,population,capital'
+      'https://restcountries.com/v3.1/all?fields=name,cca3,flags,region,subregion,population,capital,latlng'
     );
   }
 

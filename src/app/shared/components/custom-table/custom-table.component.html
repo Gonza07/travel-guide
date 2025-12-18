@@ -11,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let country of data;  index as i">
+        <tr *ngFor="let country of data;  index as i" (click)="getCountryLocation(country)">
           <th scope="row">{{i + 1}}</th>
           <td>{{country.name.common}}</td>
           <td>{{country.capital}}</td>

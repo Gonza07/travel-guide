@@ -19,4 +19,5 @@ export interface CountryData {
   population: number;
   region: string;
   subregion: string;
+  latlng?: [number, number]
 }

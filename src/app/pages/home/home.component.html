@@ -26,7 +26,7 @@
   </div>
 
   <div *ngIf="viewMode === 'card'" @fadeAnimation>
-    <app-custom-table [data]="countries"></app-custom-table>
+    <app-custom-table [data]="countries" (viewLocation)="onLocate($event)"></app-custom-table>
   </div>
 
   <div class="col-lg-8 sections-margin justify-content-center">

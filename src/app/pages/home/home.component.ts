@@ -111,7 +111,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  onLocate(location: { lat: number; lng: number }) {
+  public onLocate(location: { lat: number; lng: number }) {
+    console.log(location);
+    
   this.selectedLocation = location;
 }
 }
