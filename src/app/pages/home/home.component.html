@@ -1,4 +1,4 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 <app-custom-carousel [images]="carouselImages"></app-custom-carousel>
 
 <div>
@@ -40,6 +40,67 @@
   </div>
 </div>
 <div class="col-lg-12 sections-margin">
+  <app-custom-news
+    [inPromotion]="inPromotionTours"
+    [title]="recomendationTitle"
+    [description]="recomendationDescription"
+  ></app-custom-news>
+</div> -->
+
+<app-header></app-header>
+
+<!-- Carousel: full width -->
+<app-custom-carousel [images]="carouselImages"></app-custom-carousel>
+
+<!-- Popular tours -->
+<div class="container-fluid px-3 px-md-4">
+  <div class="d-flex justify-content-center align-items-center sections-margin">
+    <h2 class="me-3">Most popular tours</h2>
+
+    <div class="toggle">
+      <mat-button-toggle-group [(ngModel)]="viewMode" appearance="legacy">
+        <mat-button-toggle value="table">
+          <mat-icon>table_rows</mat-icon>
+        </mat-button-toggle>
+
+        <mat-button-toggle value="card">
+          <mat-icon>view_module</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div *ngIf="viewMode === 'table'" @fadeAnimation>
+    <app-custom-card
+      [cardImages]="popularTripsImages"
+      (locate)="onLocate($event)"
+    ></app-custom-card>
+  </div>
+
+  <!-- Table -->
+  <div *ngIf="viewMode === 'card'" @fadeAnimation>
+    <app-custom-table
+      [data]="countries"
+      (viewLocation)="onLocate($event)"
+    ></app-custom-table>
+  </div>
+</div>
+
+<!-- Map -->
+<div class="container-fluid sections-margin">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+      <app-map
+        [lat]="selectedLocation?.lat"
+        [lng]="selectedLocation?.lng"
+      ></app-map>
+    </div>
+  </div>
+</div>
+
+<!-- News -->
+<div class="container-fluid sections-margin">
   <app-custom-news
     [inPromotion]="inPromotionTours"
     [title]="recomendationTitle"
