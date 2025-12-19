@@ -1,33 +1,38 @@
 <ng-container *ngIf="inPromotion.length">
-  <div class="col-lg-12 d-flex news-section">
-    <div
-      class="col-lg-6"
-      [ngStyle]="{
-        'background-image': 'url(' + inPromotion[0].url + ')',
-        'background-size': 'cover',
-        'background-position': 'center',
-      }"
-    >
-      <app-featured-tag
-        [tagText]="tagText"
-        [icon]="'star'"
-        [type]="TagTypes.primary"
-      ></app-featured-tag>
-      <app-featured-tag
-        [tagText]="'Punta del Este'"
-        [icon]="'location_on'"
-        [type]="TagTypes.secondary"
-      ></app-featured-tag>
-    </div>
-    <div class="col-lg-6 news-description">
-      <h1>{{title}}</h1>
-      <p>
-        {{description}}
-      </p>
-      <button type="button" class="btn d-flex items-center">
-        Get more info
-        <span class="material-symbols-outlined"> mail </span>
-      </button>
+  <div class="container-fluid news-section">
+    <div class="row g-0">
+      
+      <div
+        class="col-12 col-lg-6 news-image"
+        [ngStyle]="{
+          'background-image': 'url(' + inPromotion[0].url + ')',
+          'background-size': 'cover',
+          'background-position': 'center'
+        }"
+      >
+        <app-featured-tag
+          [tagText]="tagText"
+          [icon]="'star'"
+          [type]="TagTypes.primary"
+        ></app-featured-tag>
+
+        <app-featured-tag
+          [tagText]="'Punta del Este'"
+          [icon]="'location_on'"
+          [type]="TagTypes.secondary"
+        ></app-featured-tag>
+      </div>
+
+      <div class="col-12 col-lg-6 news-description">
+        <h1>{{ title }}</h1>
+        <p>{{ description }}</p>
+
+        <button type="button" class="btn d-flex align-items-center gap-2">
+          Get more info
+          <span class="material-symbols-outlined">mail</span>
+        </button>
+      </div>
+
     </div>
   </div>
 </ng-container>

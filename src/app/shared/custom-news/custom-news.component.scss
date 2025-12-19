@@ -1,24 +1,39 @@
 @import "../../../variables";
 
-.news-section{
-    margin-top: $spacing-vertical;
-    margin-bottom: 100px;
+.news-section {
+  margin-top: $spacing-vertical;
+  margin-bottom: 100px;
+  padding: 0;
 }
 
-.news-description{
-    background-color: $secondary-color;
-    color: $font-primary-color;
-    padding: 50px;
-    height: 500px;
+.news-image {
+  min-height: 300px;
 
-    h1 {
-        font-weight: bolder;
-        font-size: 60px;
+  @media (min-width: 992px) {
+    min-height: 500px;
+  }
+}
+
+.news-description {
+  background-color: $secondary-color;
+  color: $font-primary-color;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    font-weight: bolder;
+    font-size: 2rem;
+
+    @media (min-width: 992px) {
+      font-size: 60px;
     }
+  }
 }
 
-
-.btn{
-    background-color: $smooth-accent-color;
-    color: $font-secondary-color;
+.btn {
+  background-color: $smooth-accent-color;
+  color: $font-secondary-color;
+  width: fit-content;
 }
