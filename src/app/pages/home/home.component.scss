@@ -11,6 +11,21 @@
     margin-left: 10px;
 }
 
-.sections-margin{
-  margin-top: 150px
+.page-content {
+  padding-top: 70px; // EXACTAMENTE la altura del navbar
+}
+@media (max-width: 768px) {
+  .page-content {
+    padding-top: 70px;
+  }
+}
+
+.sections-margin {
+  margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+  .sections-margin {
+    margin-top: 40px;
+  }
 }

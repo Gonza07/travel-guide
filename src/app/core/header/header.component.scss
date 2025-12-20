@@ -8,8 +8,10 @@
     background-color: $primary-color;
 }
 
-nav{
-        position: fixed;
-    z-index: 9999;
-    height: 70px;
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 9999;
 }

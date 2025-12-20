@@ -1,7 +1,7 @@
 @import "../../../../variables";
 .tag {
   height: 40px;
-  width: 20%;
+  width: 180px;
   font-weight: bold;
   margin-top: 50px;
   padding: 0 15px;
@@ -34,6 +34,7 @@
 .tagSecondary {
   background-color: rgb(155, 155, 155);
   color: $font-secondary-color;
+  //width: 200px;
 }
 
 .tagDefault {
