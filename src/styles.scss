@@ -12,9 +12,29 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 .btn-custom-primary {
-  background-color: $smooth-accent-color;
+    background-color: $smooth-accent-color;
+  color: $font-secondary-color;
+  width: fit-content;
   &:hover {
     transition: 0.5s ease, transform 0.5s ease;
     background-color: $accent-color;
+  }
+}
+
+.custom-section {
+  background-color: $secondary-color;
+  color: $font-primary-color;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    font-weight: bolder;
+    font-size: 2rem;
+
+    @media (min-width: 992px) {
+      font-size: 60px;
+    }
   }
 }

@@ -14,7 +14,7 @@ import { CountryData } from '../../shared/interfaces/country';
 import { CommonModule } from '@angular/common';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { fadeAnimation } from './animations/home.animations';
 import { CustomNewsComponent } from '../../shared/custom-news/custom-news.component';
 import { CustomTableComponent } from '../../shared/components/custom-table/custom-table.component';
@@ -34,7 +34,9 @@ import { MapComponent } from '../../shared/components/map/map.component';
     MatIconModule,
     FormsModule,
     CustomNewsComponent,
-    MapComponent
+    MapComponent,
+    FormsModule,
+    ReactiveFormsModule
   ],
   animations: [fadeAnimation],
   templateUrl: './home.component.html',
@@ -46,9 +48,21 @@ export class HomeComponent implements OnInit {
   public carouselImages: Array<CountryCarouselImage> = [];
   public popularTripsImages: Array<CountryCarouselImage> = [];
   public inPromotionTours: Array<CountryCarouselImage> = [];
-  public recomendationTitle = "Need some recomendation? Check this maigcal tour !"
-  public recomendationDescription = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem voluptatum iusto labore. Mollitia, quasi accusamus! Itaque rerum delectus quod dolorem fugit inventore sint libero, ut quo esse, et cupiditate."
+  public recomendationTitle =
+    'Need some recomendation? Check this maigcal tour !';
+  public recomendationDescription =
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem voluptatum iusto labore. Mollitia, quasi accusamus! Itaque rerum delectus quod dolorem fugit inventore sint libero, ut quo esse, et cupiditate.';
   public selectedLocation?: { lat: number; lng: number };
+  profileForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    address: new FormGroup({
+      street: new FormControl(''),
+      city: new FormControl(''),
+      state: new FormControl(''),
+      zip: new FormControl(''),
+    }),
+  });
   constructor(
     private homeServices: HomeService,
     private spinner: NgxSpinnerService
@@ -113,7 +127,7 @@ export class HomeComponent implements OnInit {
 
   public onLocate(location: { lat: number; lng: number }) {
     console.log(location);
-    
-  this.selectedLocation = location;
-}
+
+    this.selectedLocation = location;
+  }
 }

@@ -13,27 +13,3 @@
     min-height: 500px;
   }
 }
-
-.news-description {
-  background-color: $secondary-color;
-  color: $font-primary-color;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  h1 {
-    font-weight: bolder;
-    font-size: 2rem;
-
-    @media (min-width: 992px) {
-      font-size: 60px;
-    }
-  }
-}
-
-.btn {
-  background-color: $smooth-accent-color;
-  color: $font-secondary-color;
-  width: fit-content;
-}
