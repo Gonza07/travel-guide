@@ -19,6 +19,7 @@ import { fadeAnimation } from './animations/home.animations';
 import { CustomNewsComponent } from '../../shared/custom-news/custom-news.component';
 import { CustomTableComponent } from '../../shared/components/custom-table/custom-table.component';
 import { MapComponent } from '../../shared/components/map/map.component';
+import { IconComponent } from '../../shared/components/icon/icon.component';
 
 @Component({
   selector: 'app-home',
@@ -36,7 +37,8 @@ import { MapComponent } from '../../shared/components/map/map.component';
     CustomNewsComponent,
     MapComponent,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IconComponent
   ],
   animations: [fadeAnimation],
   templateUrl: './home.component.html',
